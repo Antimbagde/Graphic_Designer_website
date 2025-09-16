@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nilesh Patil - Freelance Graphic Designer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+    nav {
+      background: #1e293b;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
+      z-index: 1000;
+    }
+    nav a {
+      color: #f8fafc;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+    .btn-gradient {
+      background: linear-gradient(45deg, #f43f5e, #fbbf24, #3b82f6, #8b5cf6);
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
+      color: white;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      box-shadow: 0 8px 15px rgba(244, 63, 94, 0.4);
+      transition: box-shadow 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-gradient:hover {
+      box-shadow: 0 12px 25px rgba(244, 63, 94, 0.7);
+      transform: translateY(-3px);
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #f43f5e, #fbbf24, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgb(0 0 0 / 0.15);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .skill {
+      background: linear-gradient(135deg, #f43f5e, #fbbf24);
+      color: white;
+      font-weight: 700;
+      padding: 1rem 0;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0 6px 15px rgb(244 63 94 / 0.4);
+      transition: box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .skill:hover { box-shadow: 0 10px 25px rgb(244 63 94 / 0.7); }
+    footer {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
+    footer a {
+      color: #fbbf24;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+    footer a:hover { color: #f43f5e; }
+    @media (min-width: 768px) {
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .about-text { flex: 1; }
+      .about-image { flex: 1; }
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 2px solid #e2e8f0;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+      resize: none;
+    }
+    form input:focus, form textarea:focus, form select:focus {
+      outline: none;
+      border-color: #f43f5e;
+      box-shadow: 0 0 8px rgba(244, 63, 94, 0.5);
+    }
+    form button { margin-top: 1rem; width: 100%; cursor: pointer; }
+    /* Portfolio Cards */
+    #portfolio .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .portfolio-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 1rem 0;
+      color: #f43f5e;
+    }
+
+    .portfolio-card ul {
+      list-style: none;
+      padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .portfolio-card ul li {
+      margin: 0.5rem 0;
+    }
+
+    .portfolio-card ul li a {
+      text-decoration: none;
+      color: #3b82f6;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .portfolio-card ul li a:hover {
+      color: #f43f5e;
+    }
+
+    /* Optional subtle gradient background for cards */
+    .portfolio-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #f43f5e 0%, #fbbf24 50%, #3b82f6 100%);
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    /* Section Title */
+    #portfolio h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #f43f5e, #fbbf24, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="fixed top-0 w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-white bg-gradient-to-r from-pink-500 via-yellow-400 to-blue-500 bg-clip-text text-transparent">Nilesh Patil</h1>
+      <ul class="flex space-x-8">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="pt-24 pb-20 text-center">
+    <img src="021.jpg" alt="Nilesh Patil" class="mx-auto rounded-full w-48 h-48 shadow-2xl mb-6 border-8 border-gradient-to-r from-pink-500 via-yellow-400 to-blue-500" />
+    <h1 class="text-5xl font-extrabold mb-2 bg-gradient-to-r from-pink-500 via-yellow-400 to-blue-500 bg-clip-text text-transparent">Nilesh Patil</h1>
+    <p class="text-xl font-semibold mb-6 text-gray-700"> Graphic Designer </p>
+    <p class="max-w-xl mx-auto mb-8 text-gray-600">Creative designs that bring your vision to life. Based in Indore, India.</p>
+    <a href="#portfolio" class="btn-gradient">Explore My Portfolio</a>
+  </section>
+
+  <section id="about" class="py-20 bg-white rounded-t-3xl shadow-lg max-w-6xl mx-auto px-6">
+    <h2>About Me</h2>
+    <div class="about-content mt-12">
+      <div class="about-image">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/67dda672-52c0-4f16-8bad-c14ac43c595b.png" alt="Workspace" class="rounded-2xl shadow-lg" />
+      </div>
+      <div class="about-text mt-8 md:mt-0 text-gray-700 text-lg leading-relaxed">
+        <p>
+          I'm Nilesh Patil, a passionate freelance graphic designer based in Indore, India with over 7 years of experience. I specialize in Adobe Photoshop, CorelDRAW, and Illustrator, crafting visually stunning designs that communicate your brand's message effectively.
+        </p>
+        <p class="mt-4">
+          From packaging design to web banners and social media campaigns, I deliver creative solutions tailored to your needs, ensuring client satisfaction and timely delivery.
+        </p>
+        <div class="mt-6 flex space-x-4">
+          <a href="https://linkedin.com/in/nilesh-patil-554453189" target="_blank" class="text-pink-500 font-semibold hover:underline">LinkedIn</a>
+          <a href="https://www.behance.net/nileshgurjar2" target="_blank" class="text-blue-500 font-semibold hover:underline">Behance</a>
+          <a href="https://www.instagram.com/graphicperformances/" target="_blank" class="text-yellow-500 font-semibold hover:underline">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-20 max-w-6xl mx-auto px-6">
+    <h2>My Skills</h2>
+    <div class="skills-grid mt-12">
+      <div class="skill">Adobe Photoshop</div>
+      <div class="skill">CorelDRAW</div>
+      <div class="skill">Adobe Illustrator</div>
+      <div class="skill">Web Design</div>
+      <div class="skill">Packaging & Ads</div>
+      <div class="skill">Logo Animation</div>
+      <div class="skill">Social Media Design</div>
+      <div class="skill">UI/UX Basics</div>
+    </div>
+  </section>
+
+  <!-- Updated Portfolio -->
+  <section id="portfolio" class="py-20 bg-white rounded-b-3xl shadow-lg max-w-6xl mx-auto px-6">
+    <h2>My Work</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+
+      <!-- Social & Branding -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">SOCIAL & BRANDING</h3>
+        <ul class="space-y-3">
+          <li><a href="https://www.behance.net/gallery/208408235/Social-Media-Post-Design" target="_blank" class="text-pink-500 hover:underline">Social Media Post Design</a></li>
+          <li><a href="https://www.behance.net/gallery/231170703/Logo-design" target="_blank" class="text-pink-500 hover:underline">Logo Design</a></li>
+          <li><a href="https://www.behance.net/gallery/208404199/Label-Design" target="_blank" class="text-pink-500 hover:underline">Label Design</a></li>
+        </ul>
+      </div>
+
+      <!-- Amazon Works -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">AMAZON WORKS</h3>
+        <ul class="space-y-3">
+          <li><a href="https://www.behance.net/gallery/208448783/Amazon-A" target="_blank" class="text-pink-500 hover:underline">Amazon A Content</a></li>
+          <li><a href="https://www.behance.net/gallery/208464493/Amazon-Premium-A" target="_blank" class="text-pink-500 hover:underline">Amazon Premium A+</a></li>
+          <li><a href="https://www.behance.net/gallery/208468999/Amazon-Store-Front" target="_blank" class="text-pink-500 hover:underline">Amazon Store Front</a></li>
+        </ul>
+      </div>
+
+      <!-- Packaging & Print -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">PACKAGING & PRINT</h3>
+        <ul class="space-y-3">
+          <li><a href="https://www.behance.net/gallery/224091257/Aroma-Monk-packaging-design" target="_blank" class="text-pink-500 hover:underline">Aroma Monk Packaging Design</a></li>
+          <li><a href="https://www.behance.net/gallery/224089059/Safforn-Label-design" target="_blank" class="text-pink-500 hover:underline">Safforn Label Design</a></li>
+          <li><a href="https://www.behance.net/gallery/234706015/Eagle-Era-2-page-brochure-design-template" target="_blank" class="text-pink-500 hover:underline">Eagle Era Brochure Template</a></li>
+        </ul>
+      </div>
+
+      <!-- Other Projects -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">OTHER PROJECTS</h3>
+        <ul class="space-y-3">
+          <li><a href="https://www.behance.net/gallery/209068341/Plasma-Air-Cooler" target="_blank" class="text-pink-500 hover:underline">Plasma Air Cooler</a></li>
+          <li><a href="https://www.behance.net/gallery/213066451/Ambrosia-Festivals-Catalogue" target="_blank" class="text-pink-500 hover:underline">Ambrosia Festivals Catalogue</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="py-20 max-w-6xl mx-auto px-6">
+    <h2>Contact Me</h2>
+    <div class="text-center text-gray-700 text-lg mt-6">
+      <p><strong>Email:</strong> <a href="mailto:gurjarnilesh472@gmail.com" class="text-pink-500 hover:underline">gurjarnilesh472@gmail.com</a></p>
+      <p class="mt-2"><strong>Phone:</strong> <a href="tel:+917049458862" class="text-blue-500 hover:underline">+91 7049458862</a></p>
+    </div>
+
+    <div class="mt-12 max-w-3xl mx-auto bg-white rounded-3xl shadow-lg p-10">
+      <form id="contactForm" novalidate>
+        <div class="mb-6">
+          <label for="name" class="block mb-2 font-semibold text-gray-700">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your Name" />
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block mb-2 font-semibold text-gray-700">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Your Email" />
+        </div>
+        <div class="mb-6">
+          <label for="phone" class="block mb-2 font-semibold text-gray-700">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Your Phone Number" pattern="[0-9]{10,15}" />
+        </div>
+        <div class="mb-6">
+          <label for="service" class="block mb-2 font-semibold text-gray-700">What do you want?</label>
+          <select id="service" name="service" required>
+            <option value="">Select an option</option>
+            <option value="Logo Design">Logo Design</option>
+            <option value="Packaging Design">Packaging Design</option>
+            <option value="Social Media Post">Social Media Post</option>
+            <option value="Web Banner">Web Banner</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="mb-6">
+          <label for="message" class="block mb-2 font-semibold text-gray-700">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn-gradient w-full text-center">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Nilesh Patil. All rights reserved.</p>
+    <div class="mt-4">
+      <p class="mb-2">
+        <a href="mailto:gurjarnilesh472@gmail.com" class="mx-2 hover:underline">📧 gurjarnilesh472@gmail.com</a> | 
+        <a href="tel:+917049458862" class="mx-2 hover:underline">📞 +91 7049458862</a>
+      </p>
+      <a href="https://www.behance.net/nileshgurjar2" target="_blank" rel="noopener" class="mx-2 hover:underline">Behance</a>
+      <a href="https://www.instagram.com/graphicperformances/" target="_blank" rel="noopener" class="mx-2 hover:underline">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // WhatsApp integration
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const service = form.service.value;
+      const message = form.message.value.trim();
+      if (!name || !email || !phone || !service || !message) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      const phoneNumber = '917049458862';
+      const text = `👋 New Contact Request!\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nMessage: ${message}`;
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, '_blank');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
